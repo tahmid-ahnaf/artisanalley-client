@@ -11,7 +11,7 @@ const ArtList = () => {
         <p className="text-center text-xl mb-12">Bibendum arcu vitae elementum curabitur vitae nunc sed magna.blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {data.map((card)=>(
-                <ArtCard key={card._id} card={card}></ArtCard>
+                <ArtCard key={card._id} card={card} from="home"></ArtCard>
             ))}
         </div>
             

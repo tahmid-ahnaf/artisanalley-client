@@ -7,7 +7,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const ArtCard = ({ card }) => {
+const ArtCard = ({ card, from }) => {
   const {
     _id,
     image,
@@ -37,18 +37,39 @@ const ArtCard = ({ card }) => {
             fullSymbol={<FaStar className="text-xl text-[#CD3520]" />}
           /></h2>
          
-          <p className="flex items-center gap-2 text-xl"><BiCategory />{subcategory_Name}</p>
+          {from==="home" ? <p className="flex items-center gap-2 text-xl"><BiCategory />{subcategory_Name}</p> : "" }
+          
+
           {customization ==="Yes" ? <p className="flex items-center gap-2 text-xl"><MdDoneAll></MdDoneAll> Customizable </p> : <p className="flex items-center gap-2 text-xl"> <MdOutlineRemoveDone></MdOutlineRemoveDone>No Customization</p>}
           
           <p className="flex items-center text-2xl font-semibold text-[#CD3520] "><BsCurrencyDollar></BsCurrencyDollar> {price}</p>
 
           {stockStatus ==="In stock" ? <p className="flex items-center gap-2 text-xl"><input type="radio" className="radio radio-success" checked  /> In Stock</p> : <p className="flex items-center gap-2 text-xl"><input type="radio" className="radio radio-error" checked   />Made To Order</p>}
           <div className="card-actions">
+
+          {from==="home" ? 
+
           <Link to={`/view-details/${_id}`}>
 
           <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">View Details</button>
 
+          </Link> : <div className="flex flex-col md:flex-row gap-4">
+
+          <Link to={`/view-details/${_id}`}>
+
+          <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">Update</button>
+
           </Link>
+
+          <Link to={`/view-details/${_id}`}>
+
+          <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">Delete</button>
+
+          </Link>
+
+          </div>
+          }
+          
             
           </div>
         </div>

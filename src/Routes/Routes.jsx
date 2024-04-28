@@ -5,6 +5,9 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import AddItems from "../Pages/AddItems/AddItems";
 import ItemDetails from "../Pages/ItemDetails/ItemDetails";
+import AllItems from "../Pages/AllItems/AllItems";
+import MyItems from "../Pages/MyItems/MyItems";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,17 @@ const router = createBrowserRouter([
             element:<Home></Home>,
             loader: () => fetch('http://localhost:5000/items')
         },
+
+        {
+          path:"/allitems",
+          element:<AllItems></AllItems>,
+          loader: () => fetch('http://localhost:5000/items')
+      },
+
+      {
+        path:"/myitems",
+        element:<PrivateRoutes><MyItems></MyItems></PrivateRoutes>,
+    },
 
         {
           path:"/additems",
