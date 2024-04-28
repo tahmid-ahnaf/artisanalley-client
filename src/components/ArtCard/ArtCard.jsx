@@ -5,6 +5,7 @@ import { MdOutlineRemoveDone } from "react-icons/md";
 import { MdDoneAll } from "react-icons/md";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const ArtCard = ({ card }) => {
   const {
@@ -43,7 +44,12 @@ const ArtCard = ({ card }) => {
 
           {stockStatus ==="In stock" ? <p className="flex items-center gap-2 text-xl"><input type="radio" className="radio radio-success" checked  /> In Stock</p> : <p className="flex items-center gap-2 text-xl"><input type="radio" className="radio radio-error" checked   />Made To Order</p>}
           <div className="card-actions">
-            <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">View Details</button>
+          <Link to={`/view-details/${_id}`}>
+
+          <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">View Details</button>
+
+          </Link>
+            
           </div>
         </div>
       </div>
