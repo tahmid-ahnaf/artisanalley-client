@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-        <div>
+        <div className="bg-[#FAE8D3]">
 <footer
-  className="flex flex-col items-center bg-zinc-50 text-center text-surface mt-8">
+  className="flex flex-col items-center  text-center text-surface mt-8">
   <div className="max-w-[85%] mx-auto px-6 pt-6">
     <div className="mb-6 flex justify-center space-x-2">
       <a

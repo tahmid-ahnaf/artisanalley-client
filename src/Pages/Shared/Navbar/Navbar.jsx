@@ -15,7 +15,8 @@ const Navbar = () => {
 
   }
   return (
-    <div className="navbar bg-base-100 lg:max-w-[85%] mx-auto">
+    <div className="bg-[#FFF4E4]">
+    <div className="navbar lg:max-w-[85%] mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,11 +43,15 @@ const Navbar = () => {
               <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <NavLink to={"/update-profile"}>Update Profile</NavLink>
+              <NavLink to={"/allitems"}>All Items</NavLink>
             </li>
 
             <li>
-              <NavLink to={"/agents"}>Agents</NavLink>
+              <NavLink to={"/additems"}>Add Items</NavLink>
+            </li>
+
+            <li>
+              <NavLink to={"/myitems"}>My List</NavLink>
             </li>
 
             {
@@ -60,19 +65,24 @@ const Navbar = () => {
           
           </ul>
         </div>
-        <NavLink className="font-bold lg:text-3xl text-2xl" to={"/"}>UrbanAbodes</NavLink>
+        <NavLink className="font-bold lg:text-3xl text-2xl" to={"/"}>ArtisanAlley</NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-        <li>
+        <li className="text-xl font-medium">
               <NavLink to={"/"}>Home</NavLink>
-        </li>
-        <li>
-              <NavLink to={"/update-profile"}>Update Profile</NavLink>
-        </li>
-        <li>
-              <NavLink to={"/agents"}>Agents</NavLink>
-        </li>
+            </li>
+            <li className="text-xl font-medium">
+              <NavLink to={"/allitems"}>All Items</NavLink>
+            </li>
+
+            <li className="text-xl font-medium">
+              <NavLink to={"/additems"}>Add Items</NavLink>
+            </li>
+
+            <li className="text-xl font-medium">
+              <NavLink to={"/myitems"}>My List</NavLink>
+            </li>
         </ul>
       </div>
       <div className="navbar-end gap-4">
@@ -80,18 +90,26 @@ const Navbar = () => {
         user && (reload || user.photoURL) ? 
         <div className="flex items-center gap-2">
         <div className="tooltip tooltip-left cursor-pointer avatar" data-tip={user.displayName}>
-        <div className="w-10 h-10 rounded-full">
+        <div className="w-10 h-10 z-10 rounded-full">
           <img alt="user photo" src={user.photoURL} />
         </div>
       </div>
         <button onClick={handleLogOut} className="btn btn-neutral text-white text-lg hidden lg:flex">Logout</button>
         </div>
         :
-        <Link to={"/login"} className="btn btn-outline btn-success text-white text-lg">Sign In</Link>
+
+        <>
+        <Link to={"/login"} className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">Sign In</Link>
+
+        <Link to={"/register"} className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base">Register</Link>
+
+        </>
 
       }  
       </div>
     </div>
+    </div>
+    
   );
 };
 
