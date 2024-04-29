@@ -39,7 +39,7 @@ const ItemDetails = () => {
 
           <p className="text-2xl"> <span className="font-bold">Added By :</span>  {userName}</p>
 
-          {stockStatus ==="In stock" ? <p className="flex items-center gap-2 text-xl font-bold "><input type="radio" className="radio radio-success" checked  /> In Stock</p> : <p className="flex items-center gap-2 text-xl font-bold"><input type="radio" className="radio radio-error" checked   />Made To Order</p>}
+          {stockStatus ==="In Stock" ? <p className="flex items-center gap-2 text-xl font-bold "><input type="radio" className="radio radio-success" checked  /> In Stock</p> : <p className="flex items-center gap-2 text-xl font-bold"><input type="radio" className="radio radio-error" checked   />Made To Order</p>}
 
           {customization ==="Yes" ? <p className="flex items-center gap-2 text-xl font-bold"><MdDoneAll></MdDoneAll> Customizable </p> : <p className="flex items-center gap-2 text-xl font-bold"> <MdOutlineRemoveDone></MdOutlineRemoveDone>No Customization</p>}
 

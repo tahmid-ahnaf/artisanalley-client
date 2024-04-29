@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../components/AuthProvider/AuthProvider';
 const AddItems = () => {
+  const {user} = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submit action
 
@@ -13,8 +16,10 @@ const AddItems = () => {
       const customization= e.target.elements.customization.value;
       const processing_time= e.target.elements.processing_time.value;
       const stockStatus= e.target.elements.stockStatus.value;
-      const userEmail= e.target.elements.userEmail.value;
-      const userName= e.target.elements.userName.value;
+      // const userEmail= e.target.elements.userEmail.value;
+      // const userName= e.target.elements.userName.value;
+      const userEmail = user.email;
+      const userName = user.displayName;
 
     const newItem = {image, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, userEmail, userName}
 
@@ -116,12 +121,15 @@ const AddItems = () => {
           </div>
 
           <div className="form-control mb-4">
+
+          <label htmlFor="userEmail" className='mb-2 font-semibold'>Added By</label>
             <input
               type="email"
               name="userEmail"
-              placeholder="User Email Address"
+              placeholder={user.email}
               className="input input-bordered bg-[#FFF4E4]"
               required
+              disabled
             />
           </div>
 
@@ -129,9 +137,10 @@ const AddItems = () => {
             <input
               type="text"
               name="userName"
-              placeholder="User Name"
+              placeholder={user.displayName}
               className="input input-bordered bg-[#FFF4E4]"
               required
+              disabled
             />
           </div>
 
