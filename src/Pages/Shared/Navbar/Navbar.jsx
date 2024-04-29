@@ -90,11 +90,6 @@ const Navbar = () => {
         <div className="navbar-end gap-4">
           {user && (reload || user.photoURL) ? (
             <div className="flex items-center gap-2">
-              {/* <div className="tooltip tooltip-left cursor-pointer avatar" data-tip={user.displayName}>
-        <div className="w-10 h-10 z-10 rounded-full">
-          <img alt="user photo" src={user.photoURL} />
-        </div>
-      </div> */}
 
               <a
                 data-tooltip-id="my-tooltip"

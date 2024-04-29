@@ -77,7 +77,7 @@ const ArtCard = ({ card, from, items, setItems }) => {
           </h2>
 
           {from === "home" ? (
-            <p className="flex items-center gap-2 text-xl">
+            <p className="mb-2 flex items-center gap-2 text-xl">
               <BiCategory />
               {subcategory_Name}
             </p>
@@ -86,27 +86,27 @@ const ArtCard = ({ card, from, items, setItems }) => {
           )}
 
           {customization === "Yes" ? (
-            <p className="flex items-center gap-2 text-xl">
+            <p className="mb-2 flex items-center gap-2 text-xl">
               <MdDoneAll></MdDoneAll> Customizable{" "}
             </p>
           ) : (
-            <p className="flex items-center gap-2 text-xl">
+            <p className="mb-2 flex items-center gap-2 text-xl">
               {" "}
               <MdOutlineRemoveDone></MdOutlineRemoveDone>No Customization
             </p>
           )}
 
-          <p className="flex items-center text-2xl font-semibold text-[#CD3520] ">
+          <p className="mb-2 flex items-center text-2xl font-semibold text-[#CD3520] ">
             <BsCurrencyDollar></BsCurrencyDollar> {price}
           </p>
 
           {stockStatus === "In Stock" ? (
-            <p className="flex items-center gap-2 text-xl">
+            <p className="mb-2 flex items-center gap-2 text-xl">
               <input type="radio" className="radio radio-success" checked /> In
               Stock
             </p>
           ) : (
-            <p className="flex items-center gap-2 text-xl">
+            <p className="mb-2 flex items-center gap-2 text-xl">
               <input type="radio" className="radio radio-error" checked />
               Made To Order
             </p>
@@ -119,7 +119,7 @@ const ArtCard = ({ card, from, items, setItems }) => {
                 </button>
               </Link>
             ) : (
-              <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex  gap-4">
               <Link to={`/updateitem/${_id}`}>
               <button
                   onClick={() =>
