@@ -37,7 +37,7 @@ const UpdateItem = () => {
 
     // console.log(newItem);
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/update/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type' : 'application/json'

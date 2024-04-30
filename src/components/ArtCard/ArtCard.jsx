@@ -34,7 +34,7 @@ const ArtCard = ({ card, from, items, setItems }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/items/${id}`, {
+        fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/items/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

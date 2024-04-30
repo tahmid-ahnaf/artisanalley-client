@@ -119,7 +119,7 @@ const Footer = () => {
           <div className="relative md:mb-6" data-twe-input-wrapper-init>
             <input
               type="email"
-              className="peer block min-h-[auto] w-full rounded border-0 px-3 py-[0.32rem] leading-[1.6] outline-none bg-white"
+              className="peer block min-h-[auto] w-full rounded border-0 px-3 py-[0.32rem] leading-[1.6] outline-none bg-[#FFF4E4]"
               id="exampleFormControlInputEmail"
               placeholder="Email address" />
             
@@ -140,15 +140,38 @@ const Footer = () => {
 
     <div className="mb-6">
       <p className="text-xl text-center font-medium">
-      Connect with us and stay updated on the latest real estate trends, property listings, and exclusive deals. Explore our website now! Unlock your dream home with our expert guidance and personalized service. Let us make your real estate aspirations a reality together.
+      Discover our social media links, where you can engage with fellow art enthusiasts, get the latest updates on exhibitions and events, and delve deeper into the realm of creativity. Join our community and let us embark on a journey of artistic exploration together.
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid  lg:grid-cols-3 mt-12 items-center">
       <div className="mb-6 flex flex-col">
-        <h5 className="mb-2.5 font-bold text-2xl">UrbanAbodes</h5>
+        <h5 className="mb-2.5 font-bold text-5xl text-[#DE3626]">ArtisanAlley</h5>
 
-        <ul className="mb-0 list-none">
+        
+      </div>
+
+      <div className="mb-6">
+        <h5 className="mb-4 font-bold text-3xl uppercase">Quick Links</h5>
+
+        <ul className="mb-6 text-xl md:text-2xl  flex flex-col md:flex-row justify-center gap-6">
+          <li>
+            <a href="#!">Home</a>
+          </li>
+          <li>
+            <a href="#!">All Items</a>
+          </li>
+          <li>
+            <a href="#!">Add Items</a>
+          </li>
+          <li>
+            <a href="#!">My List</a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="mb-6 text-center lg:text-right">
+      <ul className="mb-0 list-none text-lg md:text-2xl space-y-3">
           <li>
             <a href="#!">95 South Park Avenue, USA</a>
           </li>
@@ -156,73 +179,16 @@ const Footer = () => {
             <a href="#!">+456 875 369 208</a>
           </li>
           <li>
-            <a href="#!">support@urbanabodes.com</a>
+            <a href="#!">support@ArtisanAlley.com</a>
           </li>
           
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Agent and Agencies</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Agency List</a>
-          </li>
-          <li>
-            <a href="#!">Agency Details</a>
-          </li>
-          <li>
-            <a href="#!">Agent List</a>
-          </li>
-          <li>
-            <a href="#!">Agent Details</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">The Highlights</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Apartments</a>
-          </li>
-          <li>
-            <a href="#!">My Houses</a>
-          </li>
-          <li>
-            <a href="#!">Condos</a>
-          </li>
-          <li>
-            <a href="#!">Villas</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Navigations</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">About Us</a>
-          </li>
-          <li>
-            <a href="#!">FAQ</a>
-          </li>
-          <li>
-            <a href="#!">Contact Us</a>
-          </li>
-          <li>
-            <a href="#!">Blog</a>
-          </li>
         </ul>
       </div>
     </div>
   </div>
  <div className="w-full bg-black/5 p-4 text-center">
-    © 2023 Copyright:
-    <a className="font-semibold" href="https://tw-elements.com/"> UrbanAbodes</a>
+    © 2024 Copyright:
+    <a className="font-semibold" href="https://tw-elements.com/"> ArtisanAlley</a>
   </div>
 </footer>
         </div>

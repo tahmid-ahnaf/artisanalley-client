@@ -23,7 +23,7 @@ const AddItems = () => {
 
     const newItem = {image, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, userEmail, userName}
 
-    fetch('http://localhost:5000/items', {
+    fetch('https://b9a10-server-side-tahmid-ahnaf.vercel.app/items', {
         method: 'POST',
         headers: {
             'content-type' : 'application/json'
@@ -40,6 +40,8 @@ const AddItems = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
+
+              e.target.reset();
 
         }
         

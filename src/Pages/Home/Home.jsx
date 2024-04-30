@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import ArtList from '../../components/ArtList/ArtList';
 import Slider from '../../components/Slider/Slider';
 import { useEffect, useState } from 'react';
+import Stat from '../../components/Stat/Stat';
+import Artists from '../../components/Artists/Artists';
 
 const Home = () => {
     const [subCategories, setSubCategories] = useState([]);
@@ -9,7 +11,7 @@ const Home = () => {
         async function fetchData() {
           try {
             const response = await fetch(
-              `http://localhost:5000/subcategories`
+              `https://b9a10-server-side-tahmid-ahnaf.vercel.app/subcategories`
             );
             const data = await response.json();
             console.log(data);
@@ -28,6 +30,8 @@ const Home = () => {
             </Helmet>
             <Slider subCategories={subCategories}></Slider>
             <ArtList></ArtList>
+            <Stat subCategories={subCategories}></Stat>
+            <Artists></Artists>
             
         </div>
         

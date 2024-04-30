@@ -9,23 +9,24 @@ import AllItems from "../Pages/AllItems/AllItems";
 import MyItems from "../Pages/MyItems/MyItems";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import UpdateItem from "../Pages/UpdateItem/UpdateItem";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
         {
             path:"/",
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/items')
+            loader: () => fetch('https://b9a10-server-side-tahmid-ahnaf.vercel.app/items')
         },
 
         {
           path:"/allitems",
           element:<AllItems></AllItems>,
-          loader: () => fetch('http://localhost:5000/items')
+          loader: () => fetch('https://b9a10-server-side-tahmid-ahnaf.vercel.app/items')
       },
 
       {
@@ -41,13 +42,13 @@ const router = createBrowserRouter([
       {
         path:"/updateitem/:id",
         element:<PrivateRoutes><UpdateItem></UpdateItem></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({params}) => fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/items/${params.id}`)
     },
 
       {
         path:"/view-details/:id",
         element:<PrivateRoutes><ItemDetails></ItemDetails></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`) 
+        loader: ({params}) => fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/items/${params.id}`) 
     },
 
         {
