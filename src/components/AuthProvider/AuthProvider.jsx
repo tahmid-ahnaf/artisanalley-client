@@ -1,6 +1,7 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase/firebase.init";
+import { GithubAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
@@ -8,7 +9,7 @@ const AuthProvider = ({children}) => {
     const [reload, setReload] = useState(false);
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
-    const facebookProvider = new FacebookAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     const [photoURLUpdated, setPhotoURLUpdated] = useState(false);
 
     const registerUser = (email,password) =>{
@@ -26,9 +27,9 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, googleProvider);
     }
 
-    const facebookLoginUser = () =>{
+    const githubLoginUser = () =>{
         setLoading(true);
-        return signInWithPopup(auth, facebookProvider);
+        return signInWithPopup(auth, githubProvider);
     }
 
 
@@ -60,7 +61,7 @@ const AuthProvider = ({children}) => {
         logoutUser,
         loading,
         googleLoginUser,
-        facebookLoginUser,
+        githubLoginUser,
         photoURLUpdated,
         setPhotoURLUpdated,
         setReload,

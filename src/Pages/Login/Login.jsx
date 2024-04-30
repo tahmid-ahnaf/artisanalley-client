@@ -2,14 +2,13 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 import { useLocation, useNavigate,Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet-async";
-import { FacebookAuthProvider, updateProfile } from "firebase/auth";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const { user,loginUser, googleLoginUser, facebookLoginUser,setReload ,setUser} =
+  const { user,loginUser, googleLoginUser, githubLoginUser,setReload ,setUser} =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -66,27 +65,10 @@ const Login = () => {
   };
 
 
-  
-
-  const handleFacebookLogIn = () => {
-    facebookLoginUser()
+  const handleGithubLogIn = () => {
+    githubLoginUser()
       .then((result) => {
         console.log(result.user);
-        const credential = FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
-        const tokenizedPhotoURL = result.user.photoURL + "?height=500&access_token=" + accessToken;
-        updateProfile(result.user, {
-          photoURL: tokenizedPhotoURL,
-        })
-          .then(() => {
-            console.log("profile updated");
-            
-            setUser({...result.user,photoURL:tokenizedPhotoURL});
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-
         setReload(true);
         toast.success("User Logged In Successfully.", {
           position: "top-right",
@@ -98,6 +80,7 @@ const Login = () => {
       })
       .catch((error) => console.log(error));
   };
+
   return (
     <div className="mx-auto bg-[#FFF4E4] p-4 lg:p-8 rounded-lg">
       <Helmet>
@@ -147,8 +130,8 @@ const Login = () => {
           <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base" onClick={handleGoogleLogIn}>
             <FaGoogle></FaGoogle>
           </button>
-          <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base" onClick={handleFacebookLogIn}>
-            <FaFacebookF />
+          <button className="btn bg-transparent border-[#CD3520] text-[#CD3520] hover:bg-[#CD3520] hover:text-white text-base" onClick={handleGithubLogIn}>
+          <FaGithub />
           </button>
         </div>
 
