@@ -47,7 +47,7 @@ const Slider = ({subCategories}) => {
       <div className="order-last md:order-last flex flex-col gap-6 items-center justify-center p-8">
         <h2 className="text-2xl  text-wrap md:text-3xl lg:text-6xl font-bold animate__animated animate__slideInRight lg:animate__delay-1s">{item.subcategory_name}</h2>
         
-        <Link to={`/property-details/${item.id}`}>
+        <Link to={`/itemsofsubcategory/${item.subcategory_name}`}>
                     <button className="btn bg-transparent text-white text-wrap lg:text-2xl font-semibold animate__animated animate__slideInUp animate__delay-1s">Explore</button>
         </Link>
       </div>
