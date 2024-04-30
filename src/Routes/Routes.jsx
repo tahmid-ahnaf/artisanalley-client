@@ -10,6 +10,7 @@ import MyItems from "../Pages/MyItems/MyItems";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import UpdateItem from "../Pages/UpdateItem/UpdateItem";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ItemofCategory from "../Pages/ItemofCategory/ItemofCategory";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ const router = createBrowserRouter([
         element:<PrivateRoutes><ItemDetails></ItemDetails></PrivateRoutes>,
         loader: ({params}) => fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/items/${params.id}`) 
     },
+
+    {
+      path:"/itemsofsubcategory/:id",
+      element:<ItemofCategory></ItemofCategory>,
+      loader: ({params}) => fetch(`https://b9a10-server-side-tahmid-ahnaf.vercel.app/itemsBySubcategory/${params.id}`) 
+  },
 
         {
           path:"/register",

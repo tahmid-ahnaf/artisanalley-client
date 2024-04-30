@@ -4,6 +4,7 @@ import Slider from '../../components/Slider/Slider';
 import { useEffect, useState } from 'react';
 import Stat from '../../components/Stat/Stat';
 import Artists from '../../components/Artists/Artists';
+import ArtCategories from '../../components/ArtCategories/ArtCategories';
 
 const Home = () => {
     const [subCategories, setSubCategories] = useState([]);
@@ -30,6 +31,7 @@ const Home = () => {
             </Helmet>
             <Slider subCategories={subCategories}></Slider>
             <ArtList></ArtList>
+            <ArtCategories subCategories={subCategories}></ArtCategories>
             <Stat subCategories={subCategories}></Stat>
             <Artists></Artists>
             
