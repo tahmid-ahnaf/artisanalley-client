@@ -5,7 +5,7 @@ const CategoryCard = ({ category }) => {
 
   return (
     <Link to={`/itemsofsubcategory/${subcategory_name}`}>
-      <div className="p-8 flex flex-col gap-4 items-center bg-[#FAE8D3] rounded-xl">
+      <div className="h-full p-8 flex flex-col gap-4 items-center bg-[#FAE8D3] rounded-xl">
         <img src={image} alt="" className="w-[300px] h-[200px]" />
 
         <p className="text-2xl font-semibold">{subcategory_name}</p>
