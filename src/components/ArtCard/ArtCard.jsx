@@ -57,7 +57,7 @@ const ArtCard = ({ card, from, items, setItems }) => {
   
   return (
     <div>
-      <div className="card h-min md:h-[400px] md:card-side bg-[#FAE8D3] shadow-xl">
+      <div className="card h-min md:h-[400px] md:card-side bg-[#FAE8D3]  shadow-xl">
         <figure className="w-full md:w-[50%] ">
           <img
             src={image}
